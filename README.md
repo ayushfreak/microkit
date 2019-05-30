@@ -59,7 +59,7 @@ CustomResponse(data, status_code=200, message="OK", **kwargs)
 A logger class to maintain a common logging format(User Defined) across the API along with allowing the developer to use it without having to write the logger module.
 
 - Sample Logging Format:
-```json
+```
 '[%(asctime)s - %(name)s - %(levelname)s - %(module)s - %(funcName)s() - %(lineno)d] - %(message)s'
 ```
 - TimeStamp Format(FIXED):
