@@ -69,7 +69,7 @@ A logger class to maintain a common logging format(User Defined) across the API 
 ### Features 
 
   - Maintains a common Logging Format across the API
-  - Give the flexibility to c
+  - Give the flexibility to the developer to use his own Log Format 
   - Save developer's time to write the Logger Module
 
 ### Installation
