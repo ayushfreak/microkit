@@ -8,7 +8,7 @@ class CustomResponse(Response):
         try:
             response_object["status code"] = int(status_code)
         except ValueError:
-            raise ValueError("invalid literal for int() with base 10")     
+            raise ValueError("invalid literal for int() with base 10")
         try:
             data = json.loads(data)
         except Exception as e:
