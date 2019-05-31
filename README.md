@@ -29,7 +29,7 @@ Provides the developer with a predefined schema (As Shown Below) of response obj
 ### Features and Constraints
 
   - If data is in string format it is considered as a message and data key is left empty.
-  - Data can be either a Python Dictionary or a Python List.
+  - Data can be either a Python Dictionary or a Python List not even in JSON Format
   - All named arguments provided by the flask response class can be passed here.
 
 
@@ -61,10 +61,6 @@ A logger class to maintain a common logging format(User Defined) across the API 
 ```
 '[%(asctime)s - %(name)s - %(levelname)s - %(module)s - %(funcName)s() - %(lineno)d] - %(message)s'
 ```
-- TimeStamp Format(FIXED):
- ```json
- "%Y-%m-%d %H:%M:%S"
-```
 
 ### Features 
 
@@ -91,7 +87,7 @@ log = FileLogger(api_name, absolute_log_file_path, log_format, logging_level).lo
 As FileLogger is a singleton class therefore the object needs to be created just once and object can be imported as per the need 
 - Default Params
 ```python
-FileLogger(api_name, absolute_log_file_path, log_format=None, logging_level=DEBUG)
+FileLogger(api_name, absolute_log_file_path, log_format=None, logging_level=INFO)
 ```
 - Note: All the logging levels can be set via FileLogger.LEVEL (FileLogger.DEBUG)
 
