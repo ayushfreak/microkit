@@ -11,8 +11,9 @@ class CustomResponse(Response):
             raise ValueError("invalid literal for int() with base 10")
         try:
             data = json.loads(data)
-        except Exception as e:
             raise ValueError("Data send in json format. Please use the right format")
+        except Exception as e:
+            pass
         if isinstance(data, str) or isinstance(data, unicode):
             response_object["message"] = str(data)
             response_object["data"] = {}
