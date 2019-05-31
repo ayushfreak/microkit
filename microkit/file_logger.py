@@ -1,7 +1,6 @@
 import logging
 import logging.handlers
 import os
-from datetime import datetime
 
 
 class Singleton(type):
@@ -23,7 +22,7 @@ class FileLogger(object):
     DEBUG = logging.DEBUG
     NOTSET = logging.NOTSET
 
-    def __init__(self, api_name, absolute_log_file_path, log_format=None, logging_level=DEBUG):
+    def __init__(self, api_name, absolute_log_file_path, log_format=None, logging_level=INFO):
         self._api_name = api_name
         self._log_file_name = os.path.basename(absolute_log_file_path)
         self._absolute_log_path = os.path.dirname(absolute_log_file_path)
@@ -41,8 +40,7 @@ class FileLogger(object):
                 os.makedirs(self._absolute_log_path)
             file_handler = logging.FileHandler(os.path.join(self._absolute_log_path, self._log_file_name))
             file_handler.setLevel(self._logging_level)
-            timestamp = datetime.today().strftime("%Y-%m-%d %H:%M:%S")
-            log_format = logging.Formatter(self._log_format, timestamp)
+            log_format = logging.Formatter(self._log_format)
             file_handler.setFormatter(log_format)
             if not logger.handlers:
                 logger.addHandler(file_handler)

@@ -12,7 +12,7 @@ class CustomResponse(Response):
         try:
             data = json.loads(data)
         except Exception as e:
-            pass
+            raise ValueError("Data send in json format. Please use the right format")
         if isinstance(data, str) or isinstance(data, unicode):
             response_object["message"] = str(data)
             response_object["data"] = {}
